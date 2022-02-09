@@ -63,9 +63,10 @@ Route::get('/', function () {
 });
 
 Route::get('posts/{post}', function($slug){
-//Find a post by its slug and pass it to a view called "post"
-$post = Post::find($slug);
 
+//Find a post by its slug and pass it to a view called "post"
+$post = Post::findOrFail($slug);
+//ddd($post);
 return view('posts',['post'=>$post]);
 
 
@@ -91,4 +92,6 @@ return view('posts',['post'=>$post]);
 //     //$post = file_get_contents($path);
 
 //     return view('posts', ['post' => $post] );
-})->where('post', '[A-z_/-]+');
+});
+
+//->where('post', '[A-z_/-]+');
