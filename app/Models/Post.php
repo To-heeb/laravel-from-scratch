@@ -9,10 +9,18 @@ class Post extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title', 'excerpt', 'body'];
+    protected $guarded = [];
+    //protected $fillable = ['title', 'excerpt', 'body', 'category_id'];
 
     public function getRouteKeyName()
     {
         return 'slug';
+    }
+
+    public function category(){
+        //Eloquent relationships
+        //hasOne, hasMany, belongsTo, belongsToMany
+
+        return $this->belongsTo(Category::class);
     }
 }

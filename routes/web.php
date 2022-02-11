@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\File;
 
 Route::get('/', function () {    
 
-    return view('post', ['posts'=> Post::all()]);
+    return view('posts', ['posts'=> Post::all()]);
 });
 
 Route::get('posts/{post:slug}', function(Post $post){ //laravel does Post::where('slug', $post)->firstOrFail()
@@ -26,7 +26,7 @@ Route::get('posts/{post:slug}', function(Post $post){ //laravel does Post::where
 //Find a post by its slug and pass it to a view called "post"
 //$post = Post::findOrFail($post);
 //ddd($post);
-return view('posts',['post'=>$post]);
+return view('post',['post'=>$post]);
 
 
 });
