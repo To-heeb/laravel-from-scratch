@@ -7,7 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
-    use HasFactory;
+    use HasFactory;  
+    //Eloquent automatically does Post::factory()
 
     protected $guarded = [];
     //protected $fillable = ['title', 'excerpt', 'body', 'category_id'];
